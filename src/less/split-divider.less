@@ -1,0 +1,19 @@
+:host {
+  --background: lightgrey;
+  --background-active: grey;
+}
+
+:host div {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  background-color: var(--background);
+}
+
+:host div:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+  background-color: var(--background-active);
+}

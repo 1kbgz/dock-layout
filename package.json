@@ -1,0 +1,50 @@
+{
+  "name": "layout",
+  "version": "0.0.1",
+  "description": "A layout engine",
+  "repository": "git@github.com:timkpaine/layout.git",
+  "author": "Tim Paine <t.paine154@gmail.com>",
+  "license": "Apache-2.0",
+  "type": "module",
+  "unpkg": "dist/cdn/layout.js",
+  "jsdelivr": "dist/cdn/layout.js",
+  "exports": {
+    ".": {
+      "types": "./dist/esm/layout.d.ts",
+      "default": "./dist/esm/layout.js"
+    },
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/**/*",
+    "index.d.ts"
+  ],
+  "types": "./dist/esm/layout.d.ts",
+  "scripts": {
+    "build": "node build.mjs",
+    "clean": "rimraf dist playwright-report",
+    "lint": "prettier --check \"examples/*.js\" \"examples/*.html\" \"src/ts/*.ts\" \"src/less/*.less\" \"tests/*.spec.js\" \"*.js\" \"*.json\" \"*.md\"",
+    "fix": "prettier --write  \"examples/*.js\" \"examples/*.html\" \"src/ts/*.ts\" \"src/less/*.less\" \"tests/*.spec.js\" \"*.js\" \"*.json\" \"*.md\"",
+    "prepack": "npm run build",
+    "start:tests": "http-server -p 3000 ",
+    "start:examples": "http-server -p 3000 -o examples/",
+    "test": "TZ=UTC playwright test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "lit": "^3.1.4"
+  },
+  "devDependencies": {
+    "@finos/perspective-esbuild-plugin": "^2.3.2",
+    "@playwright/test": "^1.36.2",
+    "@prospective.co/procss": "^0.1.13",
+    "esbuild": "^0.19.12",
+    "esbuild-plugin-less": "^1.2.3",
+    "http-server": "^14.1.1",
+    "prettier": "^3.0.1",
+    "typescript": "4"
+  }
+}
