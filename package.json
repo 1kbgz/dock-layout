@@ -45,6 +45,6 @@
     "esbuild-plugin-less": "^1.2.3",
     "http-server": "^14.1.1",
     "prettier": "^3.0.1",
-    "typescript": "4"
+    "typescript": "5"
   }
 }
