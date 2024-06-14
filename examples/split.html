@@ -1,61 +1,61 @@
 <!doctype html>
 <html>
-  <head>
-    <script type="module" src="../dist/cdn/layout.js"></script>
-    <script type="module" src="load.js"></script>
+    <head>
+        <script type="module" src="../dist/cdn/layout.js"></script>
+        <script type="module" src="load.js"></script>
 
-    <style>
-      body {
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      body > tkp-split-panel {
-        height: 100%;
-        width: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <tkp-split-panel orientation="TB">
-      <tkp-split-panel orientation="LR">
-        <tkp-split-panel orientation="LR">
-          <span>test</span>
-          <div style="background-color: red">&nbsp;</div>
-          <div style="background-color: blue"></div>
-          <div style="background-color: green"></div>
-          <div style="background-color: orange"></div>
-        </tkp-split-panel>
-        <tkp-split-panel orientation="RL">
-          <span>test</span>
-          <div style="background-color: red">&nbsp;</div>
-          <div style="background-color: blue"></div>
-          <div style="background-color: green"></div>
-          <div style="background-color: orange"></div>
-        </tkp-split-panel>
-      </tkp-split-panel>
-      <tkp-split-panel orientation="LR">
+        <style>
+            body {
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            body > tkp-split-panel {
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
         <tkp-split-panel orientation="TB">
-          <span>test</span>
-          <div style="background-color: red">&nbsp;</div>
-          <div style="background-color: blue"></div>
-          <div style="background-color: green"></div>
-          <div style="background-color: orange"></div>
+            <tkp-split-panel orientation="LR">
+                <tkp-split-panel orientation="LR">
+                    <span>LR</span>
+                    <div style="background-color: red">&nbsp;</div>
+                    <div style="background-color: blue"></div>
+                    <div style="background-color: green"></div>
+                    <div style="background-color: orange"></div>
+                </tkp-split-panel>
+                <tkp-split-panel orientation="RL">
+                    <span>RL</span>
+                    <div style="background-color: red">&nbsp;</div>
+                    <div style="background-color: blue"></div>
+                    <div style="background-color: green"></div>
+                    <div style="background-color: orange"></div>
+                </tkp-split-panel>
+            </tkp-split-panel>
+            <tkp-split-panel orientation="LR">
+                <tkp-split-panel orientation="TB">
+                    <span>TB</span>
+                    <div style="background-color: red">&nbsp;</div>
+                    <div style="background-color: blue"></div>
+                    <div style="background-color: green"></div>
+                    <div style="background-color: orange"></div>
+                </tkp-split-panel>
+                <tkp-split-panel orientation="BT">
+                    <span>BT</span>
+                    <div style="background-color: red">&nbsp;</div>
+                    <div style="background-color: blue"></div>
+                    <div style="background-color: green"></div>
+                    <div style="background-color: orange"></div>
+                </tkp-split-panel>
+            </tkp-split-panel>
         </tkp-split-panel>
-        <tkp-split-panel orientation="BT">
-          <span>test</span>
-          <div style="background-color: red">&nbsp;</div>
-          <div style="background-color: blue"></div>
-          <div style="background-color: green"></div>
-          <div style="background-color: orange"></div>
-        </tkp-split-panel>
-      </tkp-split-panel>
-    </tkp-split-panel>
-  </body>
+    </body>
 </html>

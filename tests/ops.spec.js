@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from '@playwright/test';
 
 // async function getSummaryContents(page) {
 //   return await page.evaluate(async () => {
@@ -82,6 +82,6 @@ import { test, expect } from "@playwright/test";
 //   });
 // });
 
-test.describe("Placeholder", () => {
-  test("placeholder", async ({ page }) => {});
+test.describe('Placeholder', () => {
+    test('placeholder', async ({ page }) => {});
 });
