@@ -101,7 +101,7 @@ class SplitDivider extends HTMLElement {
     }
 }
 
-createIfNotDefined('tkp-split-panel-divider', SplitDivider);
+createIfNotDefined('dl-split-panel-divider', SplitDivider);
 
 export class SplitPanel extends ResizeablePanel {
     dividers: HTMLElement[];
@@ -123,7 +123,7 @@ export class SplitPanel extends ResizeablePanel {
             if (index === this.childElements.length - 1) return;
 
             // add a divider
-            const divider = document.createElement('tkp-split-panel-divider');
+            const divider = document.createElement('dl-split-panel-divider');
 
             // TODO precalc
             if (this.layout === 'H') {

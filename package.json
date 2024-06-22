@@ -1,17 +1,17 @@
 {
-    "name": "layout",
+    "name": "dock-layout",
     "version": "0.0.1",
     "description": "A layout engine",
-    "repository": "git@github.com:timkpaine/layout.git",
+    "repository": "git@github.com:1kbgz/dock-layout.git",
     "author": "Tim Paine <t.paine154@gmail.com>",
     "license": "Apache-2.0",
     "type": "module",
-    "unpkg": "dist/cdn/layout.js",
-    "jsdelivr": "dist/cdn/layout.js",
+    "unpkg": "dist/cdn/dock-layout.js",
+    "jsdelivr": "dist/cdn/dock-layout.js",
     "exports": {
         ".": {
-            "types": "./dist/esm/layout.d.ts",
-            "default": "./dist/esm/layout.js"
+            "types": "./dist/esm/dock-layout.d.ts",
+            "default": "./dist/esm/dock-layout.js"
         },
         "./dist/*": "./dist/*",
         "./package.json": "./package.json"
@@ -20,7 +20,7 @@
         "dist/**/*",
         "index.d.ts"
     ],
-    "types": "./dist/esm/layout.d.ts",
+    "types": "./dist/esm/dock-layout.d.ts",
     "scripts": {
         "build": "node build.mjs",
         "clean": "rimraf dist playwright-report",
