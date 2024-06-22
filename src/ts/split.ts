@@ -28,6 +28,7 @@ class SplitDivider extends HTMLElement {
             ev.preventDefault();
             ev.stopPropagation();
             const rect = this.div.getBoundingClientRect();
+            // TODO precalc
             if (this.parentLayout.layout === 'H') {
                 lastpos = (rect.left + rect.right) / 2;
             } else {
@@ -37,6 +38,7 @@ class SplitDivider extends HTMLElement {
             let moveBefore: number;
             let moveAfter: number;
 
+            // TODO precalc
             if (this.parentLayout.layout === 'H') {
                 moveBefore = ev.pageX - lastpos;
                 moveAfter = lastpos - ev.pageX;
@@ -50,6 +52,7 @@ class SplitDivider extends HTMLElement {
                 return;
             }
 
+            // TODO precalc
             if (this.parentLayout.layout === 'H') {
                 let newbeforeWidth = this.getBeforeElementSize() + moveBefore;
                 let newafterWidth = this.getAfterElementSize() + moveAfter;
@@ -122,7 +125,9 @@ export class SplitPanel extends ResizeablePanel {
             // add a divider
             const divider = document.createElement('tkp-split-panel-divider');
 
+            // TODO precalc
             if (this.layout === 'H') {
+                // TODO precalc
                 if (this.reversed) {
                     (divider as SplitDivider).getBeforeElementSize = () => this.childSizes[index + 1].width;
                     (divider as SplitDivider).getAfterElementSize = () => this.childSizes[index].width;
@@ -133,6 +138,7 @@ export class SplitPanel extends ResizeablePanel {
                     (divider as SplitDivider).updateSizes = (a: number, b: number) => this.updateSizes([index, index + 1], [a, b]);
                 }
             } else {
+                // TODO precalc
                 if (this.reversed) {
                     (divider as SplitDivider).getBeforeElementSize = () => this.childSizes[index + 1].height;
                     (divider as SplitDivider).getAfterElementSize = () => this.childSizes[index].height;
@@ -156,6 +162,7 @@ export class SplitPanel extends ResizeablePanel {
         // draw dividers
         const dims = this.getBoundingClientRect();
         this.dividers.forEach((divider: SplitDivider) => {
+            // TODO precalc
             if (this.layout === 'H') {
                 divider.style.height = `${dims?.height}px`;
                 divider.style.width = `${this.dividerSize}px`;

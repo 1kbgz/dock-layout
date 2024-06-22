@@ -98,6 +98,7 @@ export class ResizeablePanel extends HTMLBaseElement {
         let size = this.extraSpace;
         this.childElements.forEach((element: HTMLElement): void => {
             const rect = element.getBoundingClientRect();
+            // TODO precalc
             if (this.layout === 'V') {
                 size += rect.height;
             } else {
@@ -113,6 +114,7 @@ export class ResizeablePanel extends HTMLBaseElement {
         const extra = includeExtra ? this.extraSpace : 0;
 
         if (this.childElements.length !== 0) {
+            // TODO precalc
             if (this.layout === 'H') {
                 height = dims?.height;
                 width = (dims?.width - extra) / this.childElements.length;
@@ -165,6 +167,7 @@ export class ResizeablePanel extends HTMLBaseElement {
     updateSizes(indexes: number[], sizes: number[]): void {
         indexes.forEach((index, index_in_sizes) => {
             const size: number = sizes[index_in_sizes];
+            // TODO precalc
             if (this.layout === 'H') {
                 this.childSizes[index].width = size;
             } else {
@@ -182,6 +185,7 @@ export class ResizeablePanel extends HTMLBaseElement {
 
         // calculate change in heights/width overall,
         // to spread across child elements
+        // TODO precalc
         const { height: heightDiff, width: widthDiff } = this._calcHeightWidth({
             height: this.layout === 'V' ? newDims.height - sizeFromChildren : newDims.height,
             width: this.layout === 'H' ? newDims.width - sizeFromChildren : newDims.width,
@@ -193,6 +197,7 @@ export class ResizeablePanel extends HTMLBaseElement {
                 // skip if locked
                 return;
             }
+            // TODO precalc
             this.childSizes[index] = {
                 height: this.layout === 'V' ? this.childSizes[index].height + heightDiff : heightDiff,
                 width: this.layout === 'H' ? this.childSizes[index].width + widthDiff : widthDiff,
