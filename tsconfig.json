@@ -1,17 +1,17 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "./dist/esm",
-    "resolveJsonModule": true,
-    "rootDir": ".",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ESNext"
-  },
-  "include": ["./src/ts/*.ts", "./tests/*.ts"]
+    "compilerOptions": {
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "outDir": "./dist/esm",
+        "resolveJsonModule": true,
+        "rootDir": ".",
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "ESNext"
+    },
+    "include": ["./src/ts/*.ts", "./tests/*.ts"]
 }
