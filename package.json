@@ -1,6 +1,6 @@
 {
     "name": "dock-layout",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A layout engine",
     "repository": "git@github.com:1kbgz/dock-layout.git",
     "author": "Tim Paine <t.paine154@gmail.com>",
