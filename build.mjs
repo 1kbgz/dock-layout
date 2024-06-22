@@ -16,7 +16,7 @@ const BUILD = [
       ".css": "text",
       ".html": "text",
     },
-    outfile: "dist/esm/layout.js",
+    outfile: "dist/esm/dock-layout.js",
   },
   {
     define: {
@@ -29,7 +29,7 @@ const BUILD = [
       ".css": "text",
       ".html": "text",
     },
-    outfile: "dist/cdn/layout.js",
+    outfile: "dist/cdn/dock-layout.js",
   },
 ];
 

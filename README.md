@@ -1,5 +1,5 @@
-# layout
+# dock-layout
 
 Layout system
 
-[![Build Status](https://github.com/timkpaine/layout/actions/workflows/build.yml/badge.svg?branch=main&event=push)](https://github.com/timkpaine/layout/actions/workflows/build.yml)
+[![Build Status](https://github.com/1kbgz/dock-layout/actions/workflows/build.yml/badge.svg?branch=main&event=push)](https://github.com/1kbgz/dock-layout/actions/workflows/build.yml)
