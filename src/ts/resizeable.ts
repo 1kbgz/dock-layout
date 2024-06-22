@@ -94,7 +94,7 @@ export class ResizeablePanel extends HTMLBaseElement {
         });
     }
 
-    _calcSize(): number {
+    _calcSizeFromChildren(): number {
         let size = this.extraSpace;
         this.childElements.forEach((element: HTMLElement): void => {
             const rect = element.getBoundingClientRect();
@@ -107,17 +107,18 @@ export class ResizeablePanel extends HTMLBaseElement {
         return size;
     }
 
-    _calcHeightWidth(dims) {
+    _calcHeightWidth(dims: { height: number; width: number }, includeExtra: boolean = false) {
         let height: number = 0;
         let width: number = 0;
+        const extra = includeExtra ? this.extraSpace : 0;
 
         if (this.childElements.length !== 0) {
             if (this.layout === 'H') {
-                height = dims?.height || 0;
-                width = Math.max((dims?.width || 0 - this.extraSpace) / this.childElements.length, 0);
+                height = dims?.height;
+                width = (dims?.width - extra) / this.childElements.length;
             } else {
-                height = Math.max((dims?.height || 0 - this.extraSpace) / this.childElements.length, 0);
-                width = dims?.width || 0;
+                height = (dims?.height - extra) / this.childElements.length;
+                width = dims?.width;
             }
         }
         return { height, width };
@@ -126,7 +127,14 @@ export class ResizeablePanel extends HTMLBaseElement {
     initialdraw(): void {
         // paint children
         const dims = this.getBoundingClientRect();
-        const { height, width } = this._calcHeightWidth(dims);
+        let originalHeight = dims.height;
+        let originalWidth = dims.width;
+        if (this.layout === 'H') {
+            originalWidth -= this.extraSpace;
+        } else {
+            originalHeight -= this.extraSpace;
+        }
+        const { height, width } = this._calcHeightWidth({ height: originalHeight, width: originalWidth });
 
         switch (this.orientation) {
             case 'RL':
@@ -146,7 +154,6 @@ export class ResizeablePanel extends HTMLBaseElement {
             this.childSizes[index] = { height, width };
             element.style.height = `${this.childSizes[index].height}px`;
             element.style.width = `${this.childSizes[index].width}px`;
-            // element.style.flexGrow = '1'
             // if (!element.style.overflow) {
             //     element.style.overflow = 'hidden';
             // }
@@ -155,28 +162,63 @@ export class ResizeablePanel extends HTMLBaseElement {
         this.parsed = true;
     }
 
-    scaledraw(): void {
-        // scale sizes by change
-        const size = this._calcSize();
-        const newDims = this.getBoundingClientRect();
-        const { height: heightDiff, width: widthDiff } = this._calcHeightWidth({
-            height: this.layout === 'V' ? newDims.height - size : newDims.height,
-            width: this.layout === 'H' ? newDims.width - size : newDims.width,
+    updateSizes(indexes: number[], sizes: number[]): void {
+        indexes.forEach((index, index_in_sizes) => {
+            const size: number = sizes[index_in_sizes];
+            if (this.layout === 'H') {
+                this.childSizes[index].width = size;
+            } else {
+                this.childSizes[index].height = size;
+            }
         });
+        this.scaledraw(indexes);
+    }
+
+    scaledraw(only: number[] = []): void {
+        // scale sizes by change
+        const sizeFromChildren = this._calcSizeFromChildren();
+        const newDims = this.getBoundingClientRect();
+        const onlyChangeIndexes = only !== undefined ? only : [];
+
+        // calculate change in heights/width overall,
+        // to spread across child elements
+        const { height: heightDiff, width: widthDiff } = this._calcHeightWidth({
+            height: this.layout === 'V' ? newDims.height - sizeFromChildren : newDims.height,
+            width: this.layout === 'H' ? newDims.width - sizeFromChildren : newDims.width,
+        });
+
+        // update elements accordingly
         this.childElements.forEach((element: HTMLElement, index: number): void => {
+            if (onlyChangeIndexes.length > 0 && onlyChangeIndexes.indexOf(index) < 0) {
+                // skip if locked
+                return;
+            }
             this.childSizes[index] = {
                 height: this.layout === 'V' ? this.childSizes[index].height + heightDiff : heightDiff,
                 width: this.layout === 'H' ? this.childSizes[index].width + widthDiff : widthDiff,
             };
             element.style.height = `${this.childSizes[index].height}px`;
             element.style.width = `${this.childSizes[index].width}px`;
-            console.log(`Setting width to ${this.childSizes[index].width}`);
+        });
+
+        // reset stored heights and widths to actual after laying out
+        this.childElements.forEach((element: HTMLElement, index: number): void => {
+            if (onlyChangeIndexes.length > 0 && onlyChangeIndexes.indexOf(index) < 0) {
+                // skip if locked
+                return;
+            }
+            const rect = element.getBoundingClientRect();
+            this.childSizes[index] = {
+                height: rect.height,
+                width: rect.width,
+            };
         });
     }
 
     draw(): void {
         if (this._first) {
             this.initialdraw();
+            this.scaledraw();
             this._first = false;
         } else {
             this.scaledraw();
