@@ -20,7 +20,7 @@ importers:
         version: 1.45.0
       '@prospective.co/procss':
         specifier: ^0.1.13
-        version: 0.1.15
+        version: 0.1.16
       esbuild:
         specifier: ^0.21.5
         version: 0.21.5
@@ -191,8 +191,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@prospective.co/procss@0.1.15':
-    resolution: {integrity: sha512-wTjE7IqzU+WmR0Qkyn9i/Mgr0EFHEzmOY8xifXrTIVdeEp8W9XikKE/y+ozWVPgEBM+A+WpF90/8G4u03yfsyQ==}
+  '@prospective.co/procss@0.1.16':
+    resolution: {integrity: sha512-Glfk6HVFVMAZL1rYsNicsODiFrikgyquYkqePWnAL+IyFDu6wfM4SHw8i/0mYuQmIxi0FR2IJJxJNiGAD86v4g==}
 
   '@types/less@3.0.6':
     resolution: {integrity: sha512-PecSzorDGdabF57OBeQO/xFbAkYWo88g4Xvnsx7LRwqLC17I7OoKtA3bQB9uXkY6UkMWCOsA8HSVpaoitscdXw==}
@@ -619,7 +619,7 @@ snapshots:
     dependencies:
       playwright: 1.45.0
 
-  '@prospective.co/procss@0.1.15': {}
+  '@prospective.co/procss@0.1.16': {}
 
   '@types/less@3.0.6': {}
 
