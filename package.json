@@ -38,7 +38,7 @@
         "lit": "^3.1.4"
     },
     "devDependencies": {
-        "@finos/perspective-esbuild-plugin": "^2.3.2",
+        "@finos/perspective-esbuild-plugin": "^3.0.2",
         "@playwright/test": "^1.36.2",
         "@prospective.co/procss": "^0.1.13",
         "esbuild": "^0.21.5",

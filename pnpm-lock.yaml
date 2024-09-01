@@ -13,8 +13,8 @@ importers:
         version: 3.2.0
     devDependencies:
       '@finos/perspective-esbuild-plugin':
-        specifier: ^2.3.2
-        version: 2.10.1
+        specifier: ^3.0.2
+        version: 3.0.2
       '@playwright/test':
         specifier: ^1.36.2
         version: 1.46.1
@@ -177,8 +177,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@finos/perspective-esbuild-plugin@2.10.1':
-    resolution: {integrity: sha512-DRHbu5D5tKpQpLfgepd8OCgaajvWnmZZQR7Ewrfw1wtrEO1bndFavYYN3KuIUp2szZ979htFpB/+ryR/BU5KwQ==}
+  '@finos/perspective-esbuild-plugin@3.0.2':
+    resolution: {integrity: sha512-9WCf2gEBteGJqO6RNOVj+NnQUU66Zo0h+g5zNjSQa3tkaGrBKWLil5tDNLT61b4i966NFTjUm5OG9ngJDoQBDA==}
 
   '@lit-labs/ssr-dom-shim@1.2.0':
     resolution: {integrity: sha512-yWJKmpGE6lUURKAaIltoPIE/wrbY3TEkqQt+X0m+7fQNnAv0keydnYvbiJFP1PnMhizmIWRWOG5KLhYyc/xl+g==}
@@ -602,7 +602,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@finos/perspective-esbuild-plugin@2.10.1':
+  '@finos/perspective-esbuild-plugin@3.0.2':
     dependencies:
       node-fetch: 2.7.0
       tar: 6.2.1
