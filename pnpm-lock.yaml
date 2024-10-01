@@ -26,7 +26,7 @@ importers:
         version: 0.23.1
       esbuild-plugin-less:
         specifier: ^1.2.3
-        version: 1.3.9(esbuild@0.23.1)
+        version: 1.3.10(esbuild@0.23.1)
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
@@ -267,10 +267,10 @@ packages:
     resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
     engines: {node: '>= 0.4'}
 
-  esbuild-plugin-less@1.3.9:
-    resolution: {integrity: sha512-28IkL4PivtCTDZB1GNj+5wKHAnK/9lXQiRZJcoGJd0fmjDrRkOs/+REuG9eocIwAreHo1Ou6Cr5KkTsuU3CGhg==}
+  esbuild-plugin-less@1.3.10:
+    resolution: {integrity: sha512-kh2v5QRDpKvGrcAvMnlvCl4LEoQ4JST/yfdVNymnBw3hzFqz10l9g1Jxzlrss3zOXyTGKiTVm2qBxE5kWTlr8g==}
     peerDependencies:
-      esbuild: '>=0.14.0 <0.23.2'
+      esbuild: '>=0.14.0 <0.25.0'
 
   esbuild@0.23.1:
     resolution: {integrity: sha512-VVNz/9Sa0bs5SELtn3f7qhJCDPCF5oMEl5cO9/SSinpE9hbPVvxbd572HH5AKiP7WD8INO53GgfDDhRjkylHEg==}
@@ -694,7 +694,7 @@ snapshots:
 
   es-errors@1.3.0: {}
 
-  esbuild-plugin-less@1.3.9(esbuild@0.23.1):
+  esbuild-plugin-less@1.3.10(esbuild@0.23.1):
     dependencies:
       '@types/less': 3.0.6
       esbuild: 0.23.1
