@@ -41,7 +41,7 @@
         "@finos/perspective-esbuild-plugin": "^3.0.2",
         "@playwright/test": "^1.36.2",
         "@prospective.co/procss": "^0.1.13",
-        "esbuild": "^0.25.0",
+        "esbuild": "^0.27.2",
         "esbuild-plugin-less": "^1.2.3",
         "http-server": "^14.1.1",
         "prettier": "^3.0.1",
