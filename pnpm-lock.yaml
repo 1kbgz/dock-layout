@@ -32,7 +32,7 @@ importers:
         version: 14.1.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       prettier:
         specifier: ^3.8.1
-        version: 3.9.9
+        version: 3.9.10
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
@@ -586,8 +586,8 @@ packages:
     resolution: {integrity: sha512-rEwq/ZHlJIKw++XtLAO8PPuOQA/zaPJOZJ37BVuN97nLpMJeuDVLVGRwbFoBgLudgdTMP2hdRJP++H+8QOA3vg==}
     engines: {node: '>= 10.12'}
 
-  prettier@3.9.9:
-    resolution: {integrity: sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==}
+  prettier@3.9.10:
+    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1101,7 +1101,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  prettier@3.9.9: {}
+  prettier@3.9.10: {}
 
   prr@1.0.1:
     optional: true
